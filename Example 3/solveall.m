@@ -15,13 +15,10 @@ for k=1:length(methindices)
             [U, S, V]=svd(Aint);SD=diag(S);
             tol = max(size(Aint)) * eps(max(SD));
             ralist(k,1)=sum(SD > tol);
-%             tolElist(k,1)  = RSeps(S(1,1));
         case 2
             [Ur, Sr, Vr]=rsvd0(Aint,raTa);SrD=diag(Sr);
-%             ralist(k,1)=RSrank(Sr);
             tol = max(size(Aint)) * eps(max(SrD));
             ralist(k,1)=sum( SrD > tol);
-            %             tolElist(k,1)  = RSeps(Sr(1,1));
     end
 end
 
